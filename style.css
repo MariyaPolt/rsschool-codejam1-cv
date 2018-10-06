@@ -20,7 +20,7 @@ header h1 {
   margin-bottom: 0px;
   margin-top: 10px;
   text-transform: uppercase;
-  color: white;
+  color: #1f1a12;
   font-weight: lighter;
   letter-spacing: 0.15em;
 }
@@ -28,7 +28,7 @@ header h1 {
 header h2 {
   margin: 5px;
 
-  color: white;
+  color: #1f1a12;
   font-weight: lighter;
   font-style: italic;
 }
@@ -48,14 +48,14 @@ nav li {
 }
 
 nav a {
-  color: #cad9d9;
+  color: #1e1911;
   text-transform: uppercase;
   text-decoration: none;
   font-family: sans-serif;
 }
 
 nav a:hover {
-  color: #1e1911;
+  color: #cad9d9;
   transition: color 0.3s;
 }
 
@@ -90,7 +90,7 @@ section#summary {
 }
 
 
-.content p {
+.content p, .content ul {
   padding-top: 5px;
 
   font-size: 1.1em;
