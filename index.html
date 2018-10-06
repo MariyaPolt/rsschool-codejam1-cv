@@ -12,10 +12,10 @@
       <nav>
         <ul id="menu">
           <li><a href="#summary">Summary</a></li>
+          <li><a href="#contacts">Contacts</a></li>
           <li><a href="#codeExamples">Code examples</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#englishLevel">English level</a></li>
-          <li><a href="#contacts">Contacts</a></li>
         </ul>
       </nav>
     </header>
@@ -35,8 +35,130 @@
           <p>I am currently studying <strong>HTML/CSS/JavaScript</strong> at Rolling Scopes school. Here I learned about <strong>Git</strong> and started practicing JS. In my plans to become better in this direction and find a job within a year. I believe I can learn quickly.</p>
         </div>
       </section>
+      <section id="contacts">
+        <h3>Contacts</h3>
+        <div class="content">
+          <p>+375 25 937 81 31 life:)</p>
+          <p>mariya.poltoratskaya@gmail.com</p>
+        </div>
+      </section>
       <section id="codeExamples">
         <h3>Code examples</h3>
+        <div class="content">
+          <p>Here you can see some examples of my JS code. These are tasks I recently did for RS School. The first is a smart calculator, the second is a function that find the length of the longest consecutive elements sequence. </p>
+          <div class="code">
+            <pre>
+class SmartCalculator {
+  constructor(initialValue) {
+    this.arr = initialValue;
+  }
+
+  add(number) {
+    this.arr += ' + ' + number;
+    return this;
+  }
+
+  subtract(number) {
+    this.arr += ' - ' + number;
+    return this;
+  }
+
+  multiply(number) {
+    this.arr += ' * ' + number;
+    return this;
+  }
+
+  devide(number) {
+    this.arr += ' / ' + number;
+    return this;
+  }
+
+  pow(number) {
+    this.arr += ' ^ ' + number;
+    return this;
+  }
+
+  calculate() {
+    this.arr = this.arr.split(' ');
+      for (let i = this.arr.length - 1; i >= 0 ; i--) {
+        if (this.arr[i] == '^') {
+          this.arr[i - 1] = Math.pow(this.arr[i - 1], this.arr[i + 1]);
+          this.arr.splice(i, 2);
+        }
+      }
+
+      for (let i = this.arr.length - 1; i >= 0 ; i--) {
+        if (this.arr[i] == '*') {
+          this.arr[i - 1] = this.arr[i - 1] * this.arr[i + 1];
+          this.arr.splice(i, 2);
+        }
+      }
+
+      for (let i = this.arr.length - 1; i >= 0 ; i--) {
+        if (this.arr[i] == '/') {
+          this.arr[i - 1] = this.arr[i - 1] / this.arr[i + 1];
+          this.arr.splice(i, 2);
+        }
+      }
+
+      for (let i = 0; i < this.arr.length; i++) {
+        if (this.arr[i] == '-') {
+          this.arr[i - 1] = this.arr[i - 1] - this.arr[i + 1];
+          this.arr.splice(i, 2);
+          i--;
+        }
+      }
+
+      for (let i = 0; i < this.arr.length; i++) {
+        if (this.arr[i] == '+') {
+          this.arr[i - 1] = +this.arr[i - 1] + +this.arr[i + 1];
+          this.arr.splice(i, 2);
+          i--;
+        }
+      }
+
+    return this.arr[0];
+  }
+
+  valueOf() {
+    return this.calculate();
+  }
+}
+            </pre>
+          </div>
+          <div class="code" id="code2">
+            <pre>
+function longestConsecutiveLength(array) {
+  const set = new Set();
+  for (let i = 0; i < array.length; i++) {
+    set.add(array[i]);
+  }
+
+  let max = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    let count = 1;
+    let left = array[i] - 1;
+    let right = array[i] + 1;
+
+    while (set.delete(left)) {
+      left--;
+      count++;
+    }
+
+    while (set.delete(right)) {
+      count++;
+      right++;
+    }
+
+    max = Math.max(max, count);
+  }
+
+  return max;
+}
+            </pre>
+          </div>
+        </div>
       </section>
       <section id="education">
         <h3>Education</h3>
@@ -51,15 +173,5 @@
         </div>
       </section>
     </main>
-    <footer>
-    <footer>
-      <section id="contacts">
-        <h3>Contacts</h3>
-        <div class="content">
-          <p>+375 25 937 81 31 life:)</p>
-          <p>mariya.poltoratskaya@gmail.com</p>
-        </div>
-      </section>
-    </footer>
   </body>
 </html>
