@@ -6,8 +6,10 @@ body {
 header {
   top: 0;
 
-  width: 100%;
+  width: 1024px;
+  height: 130px;
   padding: 15px 0 0 30px;
+  position: fixed;
 
   background-color: #959a8f;
 
@@ -57,6 +59,10 @@ nav a:hover {
   transition: color 0.3s;
 }
 
+main {
+  padding-top: 130px;
+}
+
 h3 {
   margin: 15px;
 
@@ -66,4 +72,30 @@ h3 {
   letter-spacing: 0.2em;
   color: #bf593d;
   font-weight: bold;
+}
+
+.photo {
+  display: inline;
+  float: left;
+  margin-right: 50px;
+}
+
+section {
+  padding-top: 145px;
+  margin-top: -110px;
+}
+
+section#summary {
+  padding-top: 160px;
+}
+
+
+.content p {
+  padding-top: 5px;
+
+  font-size: 1.1em;
+  text-align: justify;
+  text-indent: 20px;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
 }
